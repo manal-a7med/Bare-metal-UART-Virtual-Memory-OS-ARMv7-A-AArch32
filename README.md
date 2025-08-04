@@ -1,36 +1,6 @@
 
 # Bare-metal UART & Virtual Memory OS (ARMv7-A AArch32)
 
-This project implements a bare-metal operating system targeting the Raspberry Pi 2B (ARM Cortex-A7, ARMv7-A architecture, AArch32 execution state). Developed without any underlying OS or standard runtime, it showcases direct hardware interaction through a custom UART driver, exception-level management, and a fully functioning virtual memory system.
-
-## Features
-
-- Low-level UART0 serial output with custom `printf` functionality (bare-metal, no standard library)
-- Privilege separation with mode switching from EL1 (kernel) to EL0 (user)
-- Supervisor Call (SVC) support enabling system calls from user space
-- ARMv7-A MMU integration for section-mapped virtual memory
-- Custom page table setup with translation table base registers (TTBR) and domain access control
-- Virtualized user-mode program execution in protected memory space
-- Emulated on QEMU using Raspberry Pi 2 model (`-M raspi2`)
-
-- ## Build & Run
-
-(bash)
-make            # Builds the kernel image
-make run        # Runs the image on QEMU using Raspberry Pi 2 emulation
-
-## Project Repository
-
-[GitHub: Bare-metal UART & Virtual Memory OS (ARMv7-A AArch32)](https://github.com/manal-a7med/Bare-metal-UART-Virtual-Memory-OS-ARMv7-A-AArch32)
-
-## Author
-
-Manal Ahmed Matheen
-
-
-
-# Bare-metal UART & Virtual Memory OS (ARMv7-A AArch32)
-
 This project is a low-level operating system developed for the Raspberry Pi 2B, based on the ARMv7-A architecture and AArch32 execution state. Built entirely from scratch without any reliance on an underlying operating system or C standard library, it demonstrates a detailed understanding of the ARM exception model, privilege levels, and memory management through the implementation of both serial communication and virtual memory.
 
 ## Overview
@@ -56,6 +26,19 @@ Following this, the project extends to configure and enable the Memory Managemen
 - **QEMU Emulation Target**  
   The project is designed to run on QEMU using `-M raspi2` with emulated serial output and memory behavior that matches the actual Raspberry Pi 2B hardware.
 
+## Summary Of Features
+- Low-level UART0 serial output with custom `printf` functionality (bare-metal, no standard library)
+- Privilege separation with mode switching from EL1 (kernel) to EL0 (user)
+- Supervisor Call (SVC) support enabling system calls from user space
+- ARMv7-A MMU integration for section-mapped virtual memory
+- Custom page table setup with translation table base registers (TTBR) and domain access control
+- Virtualized user-mode program execution in protected memory space
+- Emulated on QEMU using Raspberry Pi 2 model (`-M raspi2`)
+
+(bash)
+make            # Builds the kernel image
+make run        # Runs the image on QEMU using Raspberry Pi 2 emulation
+
 ## Repository
 
 GitHub: [Bare-metal UART & Virtual Memory OS (ARMv7-A AArch32)](https://github.com/manal-a7med/Bare-metal-UART-Virtual-Memory-OS-ARMv7-A-AArch32)
@@ -63,3 +46,7 @@ GitHub: [Bare-metal UART & Virtual Memory OS (ARMv7-A AArch32)](https://github.c
 ---
 
 This project demonstrates low-level ARM OS development skills including serial communication, system call handling, and virtual memory management — all implemented and tested without an operating system.
+
+## Author
+
+Manal Ahmed
